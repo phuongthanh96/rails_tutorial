@@ -4,16 +4,19 @@ class UsersController < ApplicationController
     before_action :admin_user,     only: :destroy
 
   def index
-    @users = User.where(activated: FILL_IN).paginate(page: params[:page])
+    @users = User.where(activated: true).paginate(page: params[:page])
 
   end
   def show
-    redirect_to root_url and return unless FILL_IN
+    @user = User.find(params[:id])
 
+    redirect_to root_url and return unless @user.activated?
   end
+
   def new
   	 @user = User.new
   end
+
   def create
     @user = User.new(user_params)    # Not the final implementation!
     if @user.save
@@ -27,6 +30,7 @@ class UsersController < ApplicationController
       render 'new'
     end
   end
+  
   def edit
     @user = User.find(params[:id])
 
