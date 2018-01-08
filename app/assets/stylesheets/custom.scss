@@ -1,5 +1,15 @@
-@import "bootstrap-sprockets";
 @import "bootstrap";
+
+$gray-medium-light: #eaeaea;
+$gray-light: #999;
+$gray-lighter: #eee;
+$state-danger-text: #a94442;
+@mixin box_sizing {
+  -moz-box-sizing:    border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing:         border-box;
+} 
+
 body {
   padding-top: 60px;
 }
@@ -33,14 +43,14 @@ h1 {
   text-align: center;
 }
 
-h2 {
-  font-size: 1.2em;
-  letter-spacing: -1px;
-  margin-bottom: 30px;
-  text-align: center;
-  font-weight: normal;
-  color: #777;
-}
+// h2 {
+//   font-size: 1.2em;
+//   letter-spacing: -1px;
+//   margin-bottom: 30px;
+//   text-align: center;
+//   font-weight: normal;
+//   color: #777;
+// }
 
 p {
   font-size: 1.1em;
@@ -173,7 +183,7 @@ input {
 }
 
 .field_with_errors {
-  @extend .has-error;
+  // @extend .has-error;
   .form-control {
     color: $state-danger-text;
   }
